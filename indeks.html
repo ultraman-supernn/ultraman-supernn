@@ -1,0 +1,2170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>M. Aminun Najib | Personal Website</title>
+
+<style>
+
+/* =========================
+   DASAR
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-2;
+
+    background:
+    radial-gradient(
+        circle at 10% 10%,
+        rgba(0,183,255,.13),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 90% 40%,
+        rgba(124,60,255,.14),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 50% 100%,
+        rgba(0,229,255,.08),
+        transparent 30%
+    );
+}
+
+/* PARTICLE */
+
+#particles{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:18px 7%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(5,8,22,.65);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+
+    z-index:999;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#00e5ff;
+}
+
+.navlinks{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+.navlinks a{
+    color:#dce5f7;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+.navlinks a:hover{
+    color:#00e5ff;
+}
+
+.menu{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:26px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    padding:
+        130px 7%
+        70px;
+
+    display:grid;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
+    align-items:center;
+
+    gap:60px;
+}
+
+.hero-text{
+    max-width:700px;
+}
+
+.eyebrow{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:
+        8px 15px;
+
+    border:
+        1px solid
+        rgba(0,229,255,.25);
+
+    border-radius:30px;
+
+    background:
+        rgba(0,229,255,.05);
+
+    color:#9befff;
+
+    font-size:12px;
+
+    letter-spacing:1.5px;
+}
+
+.dot{
+    width:8px;
+    height:8px;
+
+    background:#27e88b;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 15px #27e88b;
+
+    animation:blink 1.3s infinite;
+}
+
+@keyframes blink{
+
+    50%{
+        opacity:.3;
+    }
+
+}
+
+.hero h1{
+
+    margin-top:22px;
+
+    font-size:
+        clamp(48px,7vw,85px);
+
+    line-height:1.02;
+
+    letter-spacing:-4px;
+}
+
+.gradient{
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #8feeff,
+            #707bff
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+}
+
+.typing{
+
+    color:#8feeff;
+
+    font-size:21px;
+
+    margin:
+        22px 0 15px;
+
+    min-height:30px;
+}
+
+.hero p{
+
+    color:#8b98b4;
+
+    line-height:1.9;
+
+    max-width:650px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.hero-buttons{
+
+    margin-top:30px;
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+        14px 21px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            100deg,
+            #0077ff,
+            #00c6ff
+        );
+
+    box-shadow:
+        0 10px 35px
+        rgba(0,170,255,.25);
+
+    transition:.3s;
+
+    border:1px solid transparent;
+
+    cursor:pointer;
+}
+
+.btn:hover{
+
+    transform:
+        translateY(-5px);
+
+}
+
+.btn.ghost{
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    box-shadow:none;
+}
+
+
+/* =========================
+   STATISTIK
+========================= */
+
+.stats{
+
+    display:flex;
+
+    gap:35px;
+
+    margin-top:40px;
+}
+
+.stat strong{
+
+    display:block;
+
+    font-size:26px;
+}
+
+.stat span{
+
+    font-size:10px;
+
+    color:#74819b;
+
+    letter-spacing:1px;
+}
+
+
+/* =========================
+   FOTO PROFILE
+========================= */
+
+.profile-area{
+
+    display:grid;
+
+    place-items:center;
+
+    position:relative;
+}
+
+.orbit{
+
+    position:absolute;
+
+    width:410px;
+    height:410px;
+
+    border:
+        1px solid
+        rgba(0,183,255,.2);
+
+    border-radius:50%;
+
+    animation:
+        spin 18s linear infinite;
+}
+
+.orbit::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    top:30px;
+    left:80px;
+
+    border-radius:50%;
+
+    background:#00e5ff;
+
+    box-shadow:
+        0 0 20px #00e5ff;
+}
+
+.orbit::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    right:35px;
+    bottom:80px;
+
+    border-radius:50%;
+
+    background:#8b5cff;
+
+    box-shadow:
+        0 0 20px #8b5cff;
+}
+
+@keyframes spin{
+
+    to{
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+.profile-ring{
+
+    width:
+        min(330px,75vw);
+
+    height:
+        min(330px,75vw);
+
+    padding:9px;
+
+    border-radius:50%;
+
+    background:
+        conic-gradient(
+            #00e5ff,
+            #7c3cff,
+            #00b7ff,
+            #00e5ff
+        );
+
+    box-shadow:
+        0 0 45px
+        rgba(0,183,255,.35),
+
+        0 0 110px
+        rgba(124,60,255,.15);
+
+    animation:
+        float 4s ease-in-out infinite;
+
+    z-index:2;
+}
+
+.profile{
+
+    width:100%;
+    height:100%;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    background:#09152c;
+
+    border:
+        6px solid
+        #071027;
+}
+
+.profile img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+@keyframes float{
+
+    50%{
+        transform:
+            translateY(-14px);
+    }
+
+}
+
+
+/* =========================
+   FLOATING CARD
+========================= */
+
+.floating-card{
+
+    position:absolute;
+
+    z-index:3;
+
+    padding:
+        13px 17px;
+
+    border-radius:16px;
+
+    background:
+        rgba(9,17,40,.82);
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+        0 15px 35px #0007;
+
+    font-size:12px;
+
+    color:#cbd7eb;
+}
+
+.floating-card b{
+    color:white;
+}
+
+.fc1{
+    top:12%;
+    right:3%;
+}
+
+.fc2{
+    bottom:10%;
+    left:0;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+
+    padding:
+        100px 7%;
+
+    position:relative;
+}
+
+.title{
+
+    text-align:center;
+
+    margin-bottom:55px;
+}
+
+.title small{
+
+    color:#55ddff;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    font-weight:bold;
+}
+
+.title h2{
+
+    font-size:
+        clamp(32px,5vw,48px);
+
+    margin:
+        8px 0;
+
+    letter-spacing:-1px;
+}
+
+.title p{
+
+    color:#8b98b4;
+}
+
+
+/* =========================
+   BIODATA CARD
+========================= */
+
+.cards{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:17px;
+}
+
+.card{
+
+    position:relative;
+
+    padding:
+        30px 17px;
+
+    text-align:center;
+
+    min-height:220px;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    overflow:hidden;
+
+    transition:.35s;
+}
+
+.card:hover{
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(0,200,255,.5);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,100,255,.15);
+}
+
+.icon{
+
+    width:63px;
+    height:63px;
+
+    margin:
+        0 auto 18px;
+
+    border-radius:18px;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0077ff,
+            #6c35ff
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(60,80,255,.2);
+}
+
+.card h3{
+
+    font-size:11px;
+
+    color:#71819d;
+
+    letter-spacing:.8px;
+
+    margin-bottom:10px;
+}
+
+.card p{
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    line-height:1.6;
+}
+
+
+/* =========================
+   TENTANG
+========================= */
+
+.about-grid{
+
+    max-width:1050px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:25px;
+}
+
+.glass{
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    backdrop-filter:blur(12px);
+}
+
+.glass h3{
+
+    font-size:23px;
+
+    margin-bottom:16px;
+}
+
+.glass p{
+
+    color:#8997b1;
+
+    line-height:1.9;
+}
+
+.tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin-top:22px;
+}
+
+.tag{
+
+    padding:
+        8px 12px;
+
+    border-radius:20px;
+
+    background:
+        rgba(0,183,255,.06);
+
+    border:
+        1px solid
+        rgba(0,183,255,.15);
+
+    color:#8cecff;
+
+    font-size:12px;
+}
+
+
+/* =========================
+   SKILL
+========================= */
+
+.skill{
+
+    margin-top:23px;
+}
+
+.skill-head{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:12px;
+
+    margin-bottom:8px;
+
+    color:#b8c5d9;
+}
+
+.bar{
+
+    height:8px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.fill{
+
+    height:100%;
+
+    width:0;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0077ff,
+            #00e5ff
+        );
+
+    transition:
+        width 1.5s ease;
+}
+
+
+/* =========================
+   MASA DEPAN
+========================= */
+
+.future{
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            #071126,
+            transparent
+        );
+}
+
+.future-box{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    border:
+        1px solid
+        rgba(0,183,255,.12);
+
+    background:
+        radial-gradient(
+            circle at 50% 0,
+            rgba(0,183,255,.08),
+            transparent 55%
+        );
+
+}
+
+.future h2{
+
+    font-size:35px;
+}
+
+.future p{
+
+    color:#8f9db6;
+
+    line-height:1.9;
+
+    max-width:720px;
+
+    margin:
+        15px auto;
+}
+
+.code{
+
+    font-family:monospace;
+
+    color:#00ddff;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#64728b;
+
+    background:#03050d;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+
+    font-size:12px;
+}
+
+footer span{
+
+    color:#00c6ff;
+}
+
+
+/* =========================
+   ANIMASI SCROLL
+========================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        1s ease;
+}
+
+.reveal.show{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .cards{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .hero{
+
+        grid-template-columns:
+            1fr;
+
+        text-align:center;
+    }
+
+    .hero-text{
+
+        margin:auto;
+    }
+
+    .hero-buttons,
+    .stats{
+
+        justify-content:center;
+    }
+
+    .profile-area{
+
+        margin-top:30px;
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    nav{
+
+        padding:
+            15px 5%;
+    }
+
+    .menu{
+
+        display:block;
+    }
+
+    .navlinks{
+
+        display:none;
+
+        position:absolute;
+
+        top:65px;
+
+        left:5%;
+        right:5%;
+
+        padding:20px;
+
+        flex-direction:column;
+
+        gap:18px;
+
+        background:
+            rgba(8,13,32,.96);
+
+        border:
+            1px solid
+            rgba(255,255,255,.1);
+
+        border-radius:18px;
+    }
+
+    .navlinks.open{
+
+        display:flex;
+    }
+
+    .hero{
+
+        padding:
+            110px 5%
+            70px;
+    }
+
+    .hero h1{
+
+        letter-spacing:-2px;
+    }
+
+    .orbit{
+
+        width:290px;
+        height:290px;
+    }
+
+    .floating-card{
+
+        display:none;
+    }
+
+    section{
+
+        padding:
+            75px 5%;
+    }
+
+    .cards,
+    .about-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .card{
+
+        min-height:auto;
+    }
+
+    .stats{
+
+        gap:20px;
+    }
+
+    .stat strong{
+
+        font-size:22px;
+    }
+
+    .future-box{
+
+        padding:
+            35px 20px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- PARTICLE BACKGROUND -->
+
+<canvas id="particles"></canvas>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav>
+
+    <div class="logo">
+
+        Ultraman<span>Supernn.</span>
+
+    </div>
+
+
+    <button
+        class="menu"
+        onclick="toggleMenu()"
+    >
+
+        ☰
+
+    </button>
+
+
+    <ul
+        class="navlinks"
+        id="navlinks"
+    >
+
+        <li>
+            <a href="#home">
+                Beranda
+            </a>
+        </li>
+
+        <li>
+            <a href="#biodata">
+                Biodata
+            </a>
+        </li>
+
+        <li>
+            <a href="#tentang">
+                Tentang
+            </a>
+        </li>
+
+        <li>
+            <a href="#skill">
+                Skill
+            </a>
+        </li>
+
+        <li>
+            <a href="#masa-depan">
+                Masa Depan
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header
+    class="hero"
+    id="home"
+>
+
+
+    <div class="hero-text reveal">
+
+
+        <div class="eyebrow">
+
+            <i class="dot"></i>
+
+            WEBSITE PORTOFOLIO PRIBADI
+
+        </div>
+
+
+        <h1>
+
+            Halo, Saya
+
+            <br>
+
+            <span class="gradient">
+
+                M. Aminun Najib
+
+            </span>
+
+        </h1>
+
+
+        <div class="typing">
+
+            <span id="typing"></span>
+
+            <span>|</span>
+
+        </div>
+
+
+        <p>
+
+            Seorang pelajar yang memiliki
+            semangat untuk belajar,
+            berkembang, mencoba teknologi baru,
+            dan menciptakan sesuatu
+            yang bermanfaat.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#biodata"
+                class="btn"
+            >
+
+                ✨ Kenali Saya
+
+            </a>
+
+
+            <a
+                href="#tentang"
+                class="btn ghost"
+            >
+
+                Tentang Saya →
+
+            </a>
+
+        </div>
+
+
+        <div class="stats">
+
+
+            <div class="stat">
+
+                <strong>
+                    2011
+                </strong>
+
+                <span>
+                    TAHUN LAHIR
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>
+                    IT
+                </strong>
+
+                <span>
+                    MINAT UTAMA
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>
+                    ⚽
+                </strong>
+
+                <span>
+                    HOBI
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- FOTO -->
+
+    <div class="profile-area reveal">
+
+
+        <div class="orbit"></div>
+
+
+        <div class="profile-ring">
+
+            <div class="profile">
+
+                <img
+                    src="fotoprofil.jpg"
+                    alt="Foto M. Aminun Najib"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="floating-card fc1">
+
+            💻
+
+            <b>
+                IT Enthusiast
+            </b>
+
+            <br>
+
+            Always learning
+
+        </div>
+
+
+        <div class="floating-card fc2">
+
+            ⚽
+
+            <b>
+                Futsal
+            </b>
+
+            <br>
+
+            Work hard • Play hard
+
+        </div>
+
+
+    </div>
+
+
+</header>
+
+
+<!-- =========================
+     BIODATA
+========================= -->
+
+<section
+    id="biodata"
+    class="reveal"
+>
+
+
+    <div class="title">
+
+        <small>
+            PROFILE
+        </small>
+
+        <h2>
+            Biodata Diri
+        </h2>
+
+        <p>
+            Informasi singkat tentang saya
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="icon">
+                👤
+            </div>
+
+            <h3>
+                NAMA
+            </h3>
+
+            <p>
+                M. Aminun Najib
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                📅
+            </div>
+
+            <h3>
+                TEMPAT & TANGGAL LAHIR
+            </h3>
+
+            <p>
+
+                Pandeglang
+
+                <br>
+
+                22 February 2011
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                ⚽
+            </div>
+
+            <h3>
+                HOBI
+            </h3>
+
+            <p>
+                Futsal
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🎓
+            </div>
+
+            <h3>
+                STATUS
+            </h3>
+
+            <p>
+
+                Pelajar Aktif
+
+                <br>
+
+                SMA IT Seribu Bulan
+
+                <br>
+
+                Boarding School
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                💻
+            </div>
+
+            <h3>
+                MINAT / BAKAT
+            </h3>
+
+            <p>
+                IT
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================
+     TENTANG
+========================= -->
+
+<section
+    id="tentang"
+    class="reveal"
+>
+
+
+    <div class="title">
+
+        <small>
+            ABOUT ME
+        </small>
+
+        <h2>
+            Tentang Saya
+        </h2>
+
+        <p>
+            Sedikit cerita tentang diri saya
+        </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+
+        <div class="glass">
+
+            <h3>
+                👋 Hello, World!
+            </h3>
+
+
+            <p>
+
+                Saya adalah pelajar aktif
+                di <b>SMA IT Seribu Bulan
+                Boarding School</b>.
+
+                Saya tertarik dengan dunia
+                teknologi dan ingin terus
+                belajar tentang IT.
+
+            </p>
+
+
+            <p style="margin-top:15px">
+
+                Selain teknologi, saya juga
+                menyukai futsal.
+
+                Bagi saya, belajar dan bermain
+                sama-sama mengajarkan tentang
+                disiplin, kerja sama,
+                dan pantang menyerah.
+
+            </p>
+
+
+            <div class="tags">
+
+                <span class="tag">
+                    #Pelajar
+                </span>
+
+                <span class="tag">
+                    #IT
+                </span>
+
+                <span class="tag">
+                    #Futsal
+                </span>
+
+                <span class="tag">
+                    #Belajar
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- SKILL -->
+
+        <div
+            class="glass"
+            id="skill"
+        >
+
+            <h3>
+                🚀 Yang Sedang Saya Kembangkan
+            </h3>
+
+
+            <div class="skill">
+
+                <div class="skill-head">
+
+                    <span>
+                        HTML & CSS
+                    </span>
+
+                    <b>
+                        85%
+                    </b>
+
+                </div>
+
+
+                <div class="bar">
+
+                    <div
+                        class="fill"
+                        data-width="85%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-head">
+
+                    <span>
+                        JavaScript
+                    </span>
+
+                    <b>
+                        65%
+                    </b>
+
+                </div>
+
+
+                <div class="bar">
+
+                    <div
+                        class="fill"
+                        data-width="65%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-head">
+
+                    <span>
+                        Problem Solving
+                    </span>
+
+                    <b>
+                        75%
+                    </b>
+
+                </div>
+
+
+                <div class="bar">
+
+                    <div
+                        class="fill"
+                        data-width="75%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-head">
+
+                    <span>
+                        Kreativitas
+                    </span>
+
+                    <b>
+                        80%
+                    </b>
+
+                </div>
+
+
+                <div class="bar">
+
+                    <div
+                        class="fill"
+                        data-width="80%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================
+     MASA DEPAN
+========================= -->
+
+<section
+    class="future reveal"
+    id="masa-depan"
+>
+
+
+    <div class="future-box">
+
+
+        <div
+            class="title"
+            style="margin-bottom:20px"
+        >
+
+            <small>
+                MY FUTURE
+            </small>
+
+            <h2>
+                🚀 Mimpi & Masa Depan
+            </h2>
+
+        </div>
+
+
+        <p>
+
+            Saya ingin terus meningkatkan
+            kemampuan di bidang IT,
+            mempelajari teknologi baru,
+            dan suatu hari nanti menciptakan
+            karya digital yang bermanfaat
+            bagi banyak orang.
+
+        </p>
+
+
+        <p class="code">
+
+            &lt;keep_learning /&gt;
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================
+     PENUTUP
+========================= -->
+
+<section class="reveal">
+
+
+    <div
+        style="
+        text-align:center;
+        max-width:800px;
+        margin:auto;
+        "
+    >
+
+        <div class="title">
+
+            <small>
+                THANK YOU
+            </small>
+
+            <h2>
+                Terima Kasih Sudah Berkunjung 👋
+            </h2>
+
+            <p>
+
+                Ini baru permulaan.
+                Masih banyak hal yang ingin
+                saya pelajari.
+
+            </p>
+
+        </div>
+
+
+        <a
+            href="#home"
+            class="btn"
+        >
+
+            ⬆ Kembali ke Atas
+
+        </a>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © 2026
+
+    <span>
+        M. Aminun Najib
+    </span>
+
+    <br><br>
+
+    Terus Belajar •
+    Terus Berkembang •
+    Terus Berkarya
+
+</footer>
+
+
+<script>
+
+/* =========================
+   TYPING EFFECT
+========================= */
+
+const words = [
+
+    "Pelajar Aktif 🎓",
+
+    "IT Enthusiast 💻",
+
+    "Pecinta Futsal ⚽",
+
+    "Future Developer 🚀"
+
+];
+
+let wordIndex = 0;
+
+let charIndex = 0;
+
+let deleting = false;
+
+
+function typingEffect(){
+
+    const element =
+        document.getElementById(
+            "typing"
+        );
+
+    const word =
+        words[wordIndex];
+
+
+    if(!deleting){
+
+        element.textContent =
+            word.substring(
+                0,
+                charIndex
+            );
+
+        charIndex++;
+
+
+        if(charIndex >
+            word.length){
+
+            deleting = true;
+
+            setTimeout(
+                typingEffect,
+                1300
+            );
+
+            return;
+        }
+
+    }
+
+    else{
+
+        element.textContent =
+            word.substring(
+                0,
+                charIndex
+            );
+
+        charIndex--;
+
+
+        if(charIndex < 0){
+
+            deleting = false;
+
+            charIndex = 0;
+
+            wordIndex =
+                (wordIndex + 1)
+                % words.length;
+
+        }
+
+    }
+
+
+    setTimeout(
+        typingEffect,
+        deleting ? 45 : 75
+    );
+
+}
+
+
+typingEffect();
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+    document
+        .getElementById(
+            "navlinks"
+        )
+        .classList
+        .toggle("open");
+
+}
+
+
+document
+.querySelectorAll(".navlinks a")
+.forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            document
+            .getElementById(
+                "navlinks"
+            )
+            .classList
+            .remove("open");
+
+        }
+    );
+
+});
+
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+const observer =
+    new IntersectionObserver(
+        function(entries){
+
+            entries.forEach(
+                function(entry){
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target
+                        .classList
+                        .add("show");
+
+
+                        entry.target
+                        .querySelectorAll(
+                            ".fill"
+                        )
+                        .forEach(
+                            function(bar){
+
+                                bar.style.width =
+                                    bar.dataset.width;
+
+                            }
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(function(element){
+
+    observer.observe(element);
+
+});
+
+
+/* =========================
+   PARTICLE BACKGROUND
+========================= */
+
+const canvas =
+    document.getElementById(
+        "particles"
+    );
+
+const ctx =
+    canvas.getContext("2d");
+
+
+let W,H;
+
+let particles=[];
+
+
+function resizeCanvas(){
+
+    W =
+        canvas.width =
+        window.innerWidth;
+
+    H =
+        canvas.height =
+        window.innerHeight;
+
+}
+
+
+function createParticles(){
+
+    particles=[];
+
+
+    for(
+        let i=0;
+        i<55;
+        i++
+    ){
+
+        particles.push({
+
+            x:
+                Math.random()*W,
+
+            y:
+                Math.random()*H,
+
+            r:
+                Math.random()*1.7+.4,
+
+            vx:
+                (Math.random()-.5)*.25,
+
+            vy:
+                (Math.random()-.5)*.25
+
+        });
+
+    }
+
+}
+
+
+function animateParticles(){
+
+    ctx.clearRect(
+        0,
+        0,
+        W,
+        H
+    );
+
+
+    particles.forEach(
+        function(p){
+
+            p.x += p.vx;
+
+            p.y += p.vy;
+
+
+            if(p.x < 0)
+                p.x = W;
+
+            if(p.x > W)
+                p.x = 0;
+
+            if(p.y < 0)
+                p.y = H;
+
+            if(p.y > H)
+                p.y = 0;
+
+
+            ctx.beginPath();
+
+            ctx.arc(
+                p.x,
+                p.y,
+                p.r,
+                0,
+                Math.PI*2
+            );
+
+            ctx.fillStyle =
+                "rgba(80,210,255,.45)";
+
+            ctx.fill();
+
+        }
+    );
+
+
+    requestAnimationFrame(
+        animateParticles
+    );
+
+}
+
+
+resizeCanvas();
+
+createParticles();
+
+animateParticles();
+
+
+window.addEventListener(
+    "resize",
+    function(){
+
+        resizeCanvas();
+
+        createParticles();
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
